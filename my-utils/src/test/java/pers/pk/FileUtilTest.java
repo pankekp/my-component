@@ -1,9 +1,9 @@
 package pers.pk;
 
 import pers.pk.file.constant.FileUtilCharset;
-import pers.pk.file.exception.FileUtilException;
-import pers.pk.file.util.ReadUtil;
-import pers.pk.file.util.WriteUtil;
+import pers.pk.file.exception.BaseException;
+import pers.pk.file.util.file.ReadUtil;
+import pers.pk.file.util.file.WriteUtil;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class FileUtilTest {
             for (String line : result) {
                 System.out.println(line);
             }
-        } catch (FileUtilException e) {
+        } catch (BaseException e) {
             System.out.println("error");
         }
     }

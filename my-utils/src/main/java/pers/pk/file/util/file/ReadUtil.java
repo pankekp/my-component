@@ -1,7 +1,7 @@
-package pers.pk.file.util;
+package pers.pk.file.util.file;
 
 import pers.pk.file.constant.FileUtilCharset;
-import pers.pk.file.exception.FileUtilException;
+import pers.pk.file.exception.BaseException;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ReadUtil {
 
-    public static List<String> readFileByLine(String filePath, FileUtilCharset fileUtilCharset) throws FileUtilException {
+    public static List<String> readFileByLine(String filePath, FileUtilCharset fileUtilCharset) throws BaseException {
 
         File file = new File(filePath);
         List<String> result = new LinkedList<>();
@@ -28,7 +28,7 @@ public class ReadUtil {
             return result;
 
         } catch (IOException e) {
-            throw new FileUtilException(e.getMessage(), e);
+            throw new BaseException(e.getMessage(), e);
         }
     }
 }
