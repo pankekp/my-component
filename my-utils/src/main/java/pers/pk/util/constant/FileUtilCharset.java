@@ -1,4 +1,4 @@
-package pers.pk.file.constant;
+package pers.pk.util.constant;
 
 public enum FileUtilCharset {
 

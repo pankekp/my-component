@@ -1,14 +1,14 @@
-package pers.pk.file.util.file;
+package pers.pk.util.util.file;
 
-import pers.pk.file.constant.FileUtilCharset;
-import pers.pk.file.exception.BaseException;
+import pers.pk.util.constant.FileUtilCharset;
+import pers.pk.util.exception.UtilException;
 
 import java.io.*;
 import java.util.List;
 
 public class WriteUtil {
 
-    public static void writeFileByLine(String filePath, List<String> contents, FileUtilCharset fileUtilCharset) throws BaseException {
+    public static void writeFileByLine(String filePath, List<String> contents, FileUtilCharset fileUtilCharset) throws UtilException {
 
         File file = new File(filePath);
 
@@ -32,7 +32,7 @@ public class WriteUtil {
             bufferedWriter.flush();
 
         } catch (IOException e) {
-            throw new BaseException(e.getMessage(), e);
+            throw new UtilException(e.getMessage(), e);
         }
     }
 }
