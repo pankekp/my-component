@@ -1,5 +1,6 @@
 package pers.pk.util.util.json;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import pers.pk.util.exception.UtilException;
 
@@ -20,6 +21,19 @@ public class JsonUtil {
 
         try {
             value = objectMapper.readValue(json, valueType);
+        } catch (Exception e) {
+            throw new UtilException(e.getMessage(), e);
+        }
+
+        return value;
+    }
+
+    public static <T> T transStrToObj(String json, TypeReference<T> valueTypeRef) throws UtilException {
+
+        T value = null;
+
+        try {
+            value = objectMapper.readValue(json, valueTypeRef);
         } catch (Exception e) {
             throw new UtilException(e.getMessage(), e);
         }
