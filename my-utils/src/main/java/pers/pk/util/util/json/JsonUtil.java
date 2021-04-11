@@ -7,7 +7,12 @@ import java.lang.reflect.Field;
 
 public class JsonUtil {
 
-    private static ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper;
+
+    static {
+
+        objectMapper = new ObjectMapper();
+    }
 
     public static <T> T transStrToObj(String json, Class<T> valueType) throws UtilException {
 
