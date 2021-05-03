@@ -1,12 +1,15 @@
-package pers.pk.util.util.file;
+package pers.pk.util.file;
 
-import pers.pk.util.constant.FileUtilCharset;
-import pers.pk.util.exception.UtilException;
+import pers.pk.constant.FileUtilCharset;
+import pers.pk.exception.UtilException;
 
 import java.io.*;
 import java.util.List;
 
-public class WriteUtil {
+public final class WriteUtil {
+
+    private WriteUtil(){
+    }
 
     public static void writeFileByLine(String filePath, List<String> contents, FileUtilCharset fileUtilCharset) throws UtilException {
 

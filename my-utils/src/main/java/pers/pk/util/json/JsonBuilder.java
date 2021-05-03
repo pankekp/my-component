@@ -1,10 +1,10 @@
-package pers.pk.util.util.json;
+package pers.pk.util.json;
 
 import com.google.common.base.Strings;
 
-public class JsonBuilder {
+class JsonBuilder {
 
-    private StringBuilder stringBuilder;
+    private final StringBuilder stringBuilder;
 
     public JsonBuilder() {
         this.stringBuilder = new StringBuilder();

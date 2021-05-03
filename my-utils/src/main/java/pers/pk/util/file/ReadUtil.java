@@ -1,13 +1,16 @@
-package pers.pk.util.util.file;
+package pers.pk.util.file;
 
-import pers.pk.util.constant.FileUtilCharset;
-import pers.pk.util.exception.UtilException;
+import pers.pk.constant.FileUtilCharset;
+import pers.pk.exception.UtilException;
 
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ReadUtil {
+public final class ReadUtil {
+
+    private ReadUtil() {
+    }
 
     public static List<String> readFileByLine(String filePath, FileUtilCharset fileUtilCharset) throws UtilException {
 

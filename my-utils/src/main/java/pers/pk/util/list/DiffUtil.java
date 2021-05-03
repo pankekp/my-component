@@ -1,11 +1,14 @@
-package pers.pk.util.util.list;
+package pers.pk.util.list;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class DiffUtil {
+public final class DiffUtil {
+
+    private DiffUtil(){
+    }
 
     /**
      * return elements of list1 that are not in list2

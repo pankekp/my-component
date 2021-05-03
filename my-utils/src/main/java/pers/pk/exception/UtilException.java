@@ -1,4 +1,4 @@
-package pers.pk.util.exception;
+package pers.pk.exception;
 
 public class UtilException extends Throwable {
 

@@ -1,18 +1,21 @@
-package pers.pk.util.util.json;
+package pers.pk.util.json;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import pers.pk.util.exception.UtilException;
+import pers.pk.exception.UtilException;
 
 import java.lang.reflect.Field;
 
-public class JsonUtil {
+public final class JsonUtil {
 
     private static final ObjectMapper objectMapper;
 
     static {
 
         objectMapper = new ObjectMapper();
+    }
+
+    private JsonUtil(){
     }
 
     public static <T> T transStrToObj(String json, Class<T> valueType) throws UtilException {
