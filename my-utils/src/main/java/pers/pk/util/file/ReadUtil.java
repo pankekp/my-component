@@ -1,6 +1,6 @@
 package pers.pk.util.file;
 
-import pers.pk.constant.FileUtilCharset;
+import pers.pk.enums.FileUtilCharset;
 import pers.pk.exception.UtilException;
 
 import java.io.*;
