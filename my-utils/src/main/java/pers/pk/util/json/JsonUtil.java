@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import pers.pk.exception.UtilException;
 
 import java.lang.reflect.Field;
+import java.util.Map;
 
 public final class JsonUtil {
 
@@ -15,7 +16,7 @@ public final class JsonUtil {
         objectMapper = new ObjectMapper();
     }
 
-    private JsonUtil(){
+    private JsonUtil() {
     }
 
     public static <T> T transStrToObj(String json, Class<T> valueType) throws UtilException {
@@ -64,5 +65,22 @@ public final class JsonUtil {
         }
 
         return jsonBuilder.toString();
+    }
+
+    public static String mapToJson(Map map) throws UtilException {
+
+        String result = "";
+
+        if (map == null || map.size() == 0) {
+            return result;
+        }
+
+        try {
+            result = objectMapper.writeValueAsString(map);
+        } catch (Exception e) {
+            throw new UtilException(e.getMessage(), e);
+        }
+
+        return result;
     }
 }
